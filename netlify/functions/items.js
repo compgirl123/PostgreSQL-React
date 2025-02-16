@@ -1,30 +1,28 @@
 // netlify/functions/items.js
 
-// Simulated items data. In a real app, you might query your PostgreSQL DB here.
-const items = [
-  { id: 1, nom: "Item 1" },
-  { id: 2, nom: "Item 2" },
-  { id: 3, nom: "Item 3" },
-];
+// Adjust the path to your db.js based on your folder structure:
+const pool = require('../../server/db');
 
 exports.handler = async (event, context) => {
   try {
-    // You could add more logic here (e.g., reading query params)
+    // Run your query here. Adjust the query if your table/column names differ.
+    const result = await pool.query('SELECT id, nom FROM items');
+
     return {
       statusCode: 200,
       headers: {
         "Content-Type": "application/json",
-        // Allow CORS so that your frontend can access the API
+        // Enable CORS if needed:
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify(items),
+      body: JSON.stringify(result.rows),
     };
-  } catch (error) {
-    console.error("Error fetching items:", error);
+  } catch (err) {
+    console.error('Database error:', err);
     return {
       statusCode: 500,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ error: "Failed to fetch items" }),
+      body: JSON.stringify({ error: 'Failed to fetch items from the database' }),
     };
   }
 };
