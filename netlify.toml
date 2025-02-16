@@ -1,7 +1,7 @@
 [build]
-  base = "client"           # if your React app is in the "client" folder
-  publish = "build"         # publish directory is client/build
-  functions = "../netlify/functions"  # path from the base directory to your functions
+  base = "client"           # if your React app is in the client folder
+  publish = "build"         # build output is in client/build
+  functions = "../netlify/functions"  # relative path from client/ to your functions folder
 
 [[redirects]]
   from = "/api/*"
