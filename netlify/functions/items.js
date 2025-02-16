@@ -5,15 +5,17 @@ const pool = require('../../server/db');
 
 exports.handler = async (event, context) => {
   try {
-    // Run your query here. Adjust the query if your table/column names differ.
+    console.log("Connecting to database to fetch items...");
+    // Execute the query; adjust the table name or column names as necessary.
     const result = await pool.query('SELECT id, nom FROM items');
+    
+    console.log("Query successful. Items:", result.rows);
 
     return {
       statusCode: 200,
       headers: {
         "Content-Type": "application/json",
-        // Enable CORS if needed:
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "*", // CORS header to allow all origins
       },
       body: JSON.stringify(result.rows),
     };
