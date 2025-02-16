@@ -1,7 +1,6 @@
 [build]
-  base = "client"           # Assuming your client code is in the client folder.
-  publish = "build"         # This means the build folder is at client/build.
-  functions = "../netlify/functions"  # Adjust this relative path if needed.
+  publish = "client/build"
+  functions = "netlify/functions"
 
 [[redirects]]
   from = "/api/*"
