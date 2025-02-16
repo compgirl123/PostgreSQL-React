@@ -47,7 +47,6 @@ function App() {
             {items.map((item) => (
               <tr key={item.id}>
                 <td>{item.id}</td>
-                {/* Change this to item.nom if your API returns 'nom' instead of 'name' */}
                 <td>{item.nom}</td>
               </tr>
             ))}
