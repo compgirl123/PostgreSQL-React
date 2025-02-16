@@ -4,12 +4,18 @@
   functions = "../netlify/functions"
 
 [[redirects]]
+  from = "/api/items"
+  to = "/.netlify/functions/items"
+  status = 200
+  force = true
+
+# Wildcard rule (optional, add after the specific one)
+[[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
   force = true
 
-# Make sure the catch-all redirect comes last
 [[redirects]]
   from = "/*"
   to = "/index.html"
