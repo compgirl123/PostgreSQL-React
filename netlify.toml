@@ -1,10 +1,15 @@
 [build]
-  base = "client"           # if your React app is in the client folder
-  publish = "build"         # build output is in client/build
-  functions = "../netlify/functions"  # relative path from client/ to your functions folder
+  base = "client"
+  publish = "build"
+  functions = "../netlify/functions"
 
 [[redirects]]
-  from = "/test"
-  to = "/.netlify/functions/items"
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
   status = 200
 
+# Make sure the catch-all redirect comes last
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
