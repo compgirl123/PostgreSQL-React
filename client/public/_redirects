@@ -1,2 +1,2 @@
-/api/*    /api/:splat   200
+/api/*    https://idnametest.netlify.app/api/:splat   200
 /*        /index.html   200
