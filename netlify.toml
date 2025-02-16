@@ -1,10 +1,11 @@
 [build]
-  functions = "netlify/functions"
-  publish = "client/build"  # Adjust if necessary
+  base = "client"
+  publish = "build"
+  functions = "../netlify/functions"  # Adjust the path if needed
 
 [dev]
-  functions = "netlify/functions"
-
+  functions = "../netlify/functions"
+  
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
