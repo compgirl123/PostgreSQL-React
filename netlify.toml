@@ -4,7 +4,7 @@
   functions = "../netlify/functions"  # relative path from client/ to your functions folder
 
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
+  from = "/test"
+  to = "/.netlify/functions/items"
   status = 200
 
