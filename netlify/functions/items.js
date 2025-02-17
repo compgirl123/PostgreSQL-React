@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
       statusCode: 200,
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*", // CORS header to allow all origins
+        "Access-Control-Allow-Origin": "*", // Consider limiting this in production
       },
       body: JSON.stringify(result.rows),
     };
