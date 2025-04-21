@@ -24,7 +24,7 @@ app.get('/api', async (req, res) => {
 // New endpoint to fetch items from the "items" table
 app.get('/api/items', async (req, res) => {
   try {
-    const result = await pool.query('SELECT id, nom FROM items');
+    const result = await pool.query('SELECT * FROM etudiants');
     res.json(result.rows);
   } catch (err) {
     console.error('Error fetching items:', err);

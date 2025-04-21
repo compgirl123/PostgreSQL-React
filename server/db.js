@@ -2,10 +2,10 @@
 const { Pool } = require('pg');
 
 const pool = new Pool({
-    user: process.env.PGUSER || 'test',
-    host: process.env.PGHOST || 'dpg-cukkmuan91rc73asme10-a.oregon-postgres.render.com',
-    database: process.env.PGDATABASE || 'test_f99x',
-    password: process.env.PGPASSWORD || 'eXmq85OVh4sjbbEImdnrg21gXf2Khkg5',
+    user: process.env.PGUSER || 'etudiants_user',
+    host: process.env.PGHOST || 'dpg-d0354q2dbo4c73c9urmg-a.oregon-postgres.render.com',
+    database: process.env.PGDATABASE || 'etudiants',
+    password: process.env.PGPASSWORD || 'iuSCMtwMKMYlFvUbCqtInQ63LDSujauN',
     port: process.env.PGPORT || 5432,
     ssl: {
       require: true,
