@@ -3,16 +3,16 @@
   publish = "build"
   functions = "../netlify/functions"
 
-# Redirect for /api/items and any sub-path (covers trailing slash issues)
+# Redirect for /api/students and any sub-path (covers trailing slash issues)
 [[redirects]]
-  from = "/api/items/*"
+  from = "/api/students/*"
   to = "/.netlify/functions/items/:splat"
   status = 200
   force = true
 
-# Optionally, if you want to also explicitly match /api/items without a trailing slash:
+# Optionally, if you want to also explicitly match /api/students without a trailing slash:
 [[redirects]]
-  from = "/api/items"
+  from = "/api/students"
   to = "/.netlify/functions/items"
   status = 200
   force = true

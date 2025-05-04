@@ -7,7 +7,7 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/api/items')
+    fetch('/api/students')
       .then(async (res) => {
         if (!res.ok) {
           const errorText = await res.text();
@@ -45,9 +45,9 @@ function App() {
           </thead>
           <tbody>
             {items.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.nom}</td>
+              <tr key={item.student_id}>
+                <td>{item.first_name}</td>
+                <td>{item.last_name}</td>
               </tr>
             ))}
           </tbody>
