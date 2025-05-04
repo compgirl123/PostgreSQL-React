@@ -29,3 +29,9 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[build]
+  base = "client"
+  publish = "build"
+  functions = "../netlify/functions"
+  command = "npm install && npm run build"
